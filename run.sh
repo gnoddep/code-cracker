@@ -14,6 +14,6 @@ if [ "${INSTALL}" = "1" ]; then
     pip install -r requirements.txt
 fi
 
-python3 ./alarm-clock.py
+python3 ./code-cracker.py
 
 deactivate
