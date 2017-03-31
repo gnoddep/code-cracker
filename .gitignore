@@ -1,2 +1,7 @@
+# Python stuff
 .env/**
 *.pyc
+
+# OS and IDE stuff
+.idea/**
+.DS_Store

@@ -1,6 +1,7 @@
 import threading
 import RPi.GPIO as GPIO
 
+
 class Button(object):
     PRESSED = 1
     RELEASED = 0
@@ -24,7 +25,7 @@ class Button(object):
             if callback is not None:
                 self._callbacks[state] = callback
             else:
-                self._callbacks[state] = self.default_button_callback
+                self._callbacks[state] = self._button_default_callback
 
     def button_state(self):
         return self._button_state

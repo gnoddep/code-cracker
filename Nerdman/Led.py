@@ -1,16 +1,17 @@
 import threading
 import RPi.GPIO as GPIO
 
+
 class Led(object):
     ON = 1
     OFF = 0
 
-    def __init__(self, gpio_pin, state = OFF):
+    def __init__(self, gpio_pin, state=OFF):
         self._led_mutex = threading.Lock()
         self._led_gpio_pin = gpio_pin
+        self._led_state = state
 
         with self._led_mutex:
-            self._led_state = state
             GPIO.setup(self._led_gpio_pin, GPIO.OUT)
             GPIO.output(self._led_gpio_pin, self._led_state)
 

@@ -8,6 +8,7 @@ import RPi.GPIO as GPIO
 from Nerdman.LedButton import LedButton
 from Nerdman.Button import Button
 
+
 class CodeCracker:
     RED = 0
     GREEN = 1
@@ -66,7 +67,7 @@ class CodeCracker:
         for b in self.led_buttons:
             b.on()
 
-    def blink(self, times = 1):
+    def blink(self, times=1):
         for _ in range(times):
             self.all_leds_off()
             time.sleep(0.3)
@@ -89,7 +90,7 @@ class CodeCracker:
                 names.append('BLUE')
         print(names)
 
-    def reset_code(self, blink = 2):
+    def reset_code(self, blink=2):
         self.code = []
         self.code_input = []
         self.blink(blink)
@@ -136,7 +137,6 @@ class CodeCracker:
                 time.sleep(1)
                 self.all_leds_off()
                     
-
     def signal_handler(self, signal, frame):
         self.wait_mutex.set()
 
